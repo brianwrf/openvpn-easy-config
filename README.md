@@ -27,9 +27,27 @@ vim client.conf // Change `remote <remote_server> <port>` to your own remote ser
 ```
  
  ### Generate VPN client connection file
+ #### For Single VPN client
  ```
  cd /etc/openvpn
- vim mkvpnclient.sh // Change `./mkinline.sh -i client.conf -o <client_name>.ovpn` to your own VPN client file name
+ ./mkinline.sh -i client.conf -o client.ovpn
+ ```
+ 
+ #### For Multiple VPN clients
+ ```
+ cd /etc/openvpn
+ vim mkvpnclient.sh 
+ /*
+   - Change `./easyrsa build-client-full <vpnclient>` to a different client name
+   - Change `cp /tmp/vpn/openvpn-certs/server/easyrsa3/pki/issued/<vpnclient>.crt /etc/openvpn/` with the same client mame as above
+   - Change `cp /tmp/vpn/openvpn-certs/server/easyrsa3/pki/private/<vpnclient>.key /etc/openvpn/` with the same client mame as above
+   - Change `./mkinline.sh -i client.conf -o <client_name>.ovpn` to a different VPN client file name
+ */
+ vim client.conf
+ /*
+   - Change `cert /etc/openvpn/vpnclient.crt` to `cert /etc/openvpn/<client name as same as last step>.crt`
+   - Change `key /etc/openvpn/vpnclient.key` to `key /etc/openvpn/<client name as same as last step>.key`
+ */
  ./mkvpnclient.sh
  ```
  
