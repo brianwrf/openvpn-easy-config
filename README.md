@@ -21,6 +21,7 @@ cd openvpn-easy-config/
 cp server.conf /etc/openvpn
 cp client.conf /etc/openvpn
 cp mkvpnclient.sh /etc/openvpn
+cp mkinline.sh /etc/openvpn
 cd /etc/openvpn
 vim server.conf //Change `port <port>` to your own listen port
 vim client.conf //Change `remote <remote_server> <port>` to your own remote server IP or domain and listen port
