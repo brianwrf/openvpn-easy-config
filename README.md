@@ -18,11 +18,8 @@ cd openvpn-easy-config/
 ### Config
 ```
 vim /etc/sysctl.conf // Uncommend `net.ipv4.ip_forward = 0` and change to `net.ipv4.ip_forward = 1`
+vim configure.sh // Change `iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -j SNAT --to-source <local_IP>` to your own local IP
 ./configure.sh
-cp server.conf /etc/openvpn
-cp client.conf /etc/openvpn
-cp mkvpnclient.sh /etc/openvpn
-cp mkinline.sh /etc/openvpn
 cd /etc/openvpn
 vim server.conf // Change `port <port>` to your own listen port
 vim client.conf // Change `remote <remote_server> <port>` to your own remote server IP or domain and listen port
