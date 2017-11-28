@@ -5,6 +5,7 @@ It is for Ubuntu ONLY.
 ```
 git clone https://github.com/brianwrf/openvpn-easy-config
 cd openvpn-easy-config/
+chmod +x *.sh
 ./install.sh
 ```
 
