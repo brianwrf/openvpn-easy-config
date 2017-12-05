@@ -1,4 +1,5 @@
 cd /tmp
+rm -rf /tmp/vpn
 mkdir vpn
 cd vpn
 wget -c http://test.avfisher.win/xsstest/upload/openvpn-2.3.8.tar.gz
