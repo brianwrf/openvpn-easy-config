@@ -2,7 +2,7 @@ cd /tmp
 rm -rf /tmp/vpn
 mkdir vpn
 cd vpn
-wget -c http://test.avfisher.win/xsstest/upload/openvpn-2.3.8.tar.gz
+wget -c https://build.openvpn.net/downloads/releases/openvpn-2.3.8.tar.gz
 tar -xvf openvpn-2.3.8.tar.gz
 cd /tmp/vpn
 wget -c http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz
